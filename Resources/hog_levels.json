@@ -2,87 +2,87 @@
   "levels": [
     {
       "id": 0,
-      "url": "null",
-      "title": "null",
-      "counter": 0,
+      "url": "https://raw.githubusercontent.com/ArchonDZ/HOG/dev/Resources/Images/Level1.png",
+      "title": "Lvl 1",
+      "counter": 1,
       "counterMax": 10
     },
     {
       "id": 1,
-      "url": "null",
-      "title": "null",
-      "counter": 0,
+      "url": "https://raw.githubusercontent.com/ArchonDZ/HOG/dev/Resources/Images/Level2.png",
+      "title": "Lvl 2",
+      "counter": 2,
       "counterMax": 10
     },
     {
       "id": 2,
-      "url": "null",
-      "title": "null",
-      "counter": 0,
+      "url": "https://raw.githubusercontent.com/ArchonDZ/HOG/dev/Resources/Images/Level3.png",
+      "title": "Lvl 3",
+      "counter": 3,
       "counterMax": 10
     },
     {
       "id": 3,
-      "url": "null",
-      "title": "null",
+      "url": "https://raw.githubusercontent.com/ArchonDZ/HOG/dev/Resources/Images/Level4.png",
+      "title": "Lvl 4",
       "counter": 0,
       "counterMax": 10
     },
     {
       "id": 4,
-      "url": "null",
-      "title": "null",
+      "url": "https://raw.githubusercontent.com/ArchonDZ/HOG/dev/Resources/Images/Level5.png",
+      "title": "Lvl 5",
       "counter": 0,
       "counterMax": 10
     },
     {
       "id": 5,
-      "url": "null",
-      "title": "null",
+      "url": "https://raw.githubusercontent.com/ArchonDZ/HOG/dev/Resources/Images/Level6.png",
+      "title": "Lvl 6",
       "counter": 0,
       "counterMax": 10
     },
     {
       "id": 6,
-      "url": "null",
-      "title": "null",
+      "url": "https://raw.githubusercontent.com/ArchonDZ/HOG/dev/Resources/Images/Level7.png",
+      "title": "Lvl 7",
       "counter": 0,
-      "counterMax": 10
+      "counterMax": 15
     },
     {
       "id": 7,
-      "url": "null",
-      "title": "null",
+      "url": "https://raw.githubusercontent.com/ArchonDZ/HOG/dev/Resources/Images/Level8.png",
+      "title": "Lvl 8",
       "counter": 0,
-      "counterMax": 10
+      "counterMax": 15
     },
     {
       "id": 8,
-      "url": "null",
-      "title": "null",
+      "url": "https://raw.githubusercontent.com/ArchonDZ/HOG/dev/Resources/Images/Level9.png",
+      "title": "Lvl 9",
       "counter": 0,
-      "counterMax": 10
+      "counterMax": 15
     },
     {
       "id": 9,
-      "url": "null",
-      "title": "null",
+      "url": "https://raw.githubusercontent.com/ArchonDZ/HOG/dev/Resources/Images/Level10.png",
+      "title": "Lvl 10",
       "counter": 0,
-      "counterMax": 10
+      "counterMax": 20
     },
     {
       "id": 10,
-      "url": "null",
-      "title": "null",
+      "url": "https://raw.githubusercontent.com/ArchonDZ/HOG/dev/Resources/Images/Level11.png",
+      "title": "Lvl 11",
       "counter": 0,
-      "counterMax": 10
+      "counterMax": 20
     },
     {
       "id": 11,
-      "url": "null",
-      "title": "null",
+      "url": "https://raw.githubusercontent.com/ArchonDZ/HOG/dev/Resources/Images/Level12.png",
+      "title": "Lvl 12",
       "counter": 0,
-      "counterMax": 10
+      "counterMax": 20
     }
   ]
 }
