@@ -726,7 +726,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playButton: {fileID: 2259181611427529786}
   statusImage: {fileID: 7828462332843663638}
-  progressFillImage: {fileID: 5066653035067792442}
+  progressBar: {fileID: 5407422992621922498}
   numberText: {fileID: 6958515881471349930}
   titleText: {fileID: 8415264203506480814}
   progressText: {fileID: 2091094947062353574}
@@ -869,15 +869,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d62d114e5207dc48b5e99ebfdc251a6, type: 3}
---- !u!114 &5066653035067792442 stripped
+--- !u!114 &5407422992621922498 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6036747831249729122, guid: 9d62d114e5207dc48b5e99ebfdc251a6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6817762312823456410, guid: 9d62d114e5207dc48b5e99ebfdc251a6, type: 3}
   m_PrefabInstance: {fileID: 1555580514518248024}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: c1a3aeba9f713614ca57ececc1b82cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &9191948215487633744 stripped

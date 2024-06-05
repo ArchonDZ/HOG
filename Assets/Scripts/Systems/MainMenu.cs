@@ -1,18 +1,28 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private LevelIcon levelIconPrefab;
+    [SerializeField] private Transform levelIconParent;
+
+    [Inject] private DiContainer diContainer;
+    [Inject] private ContentLoader contentLoader;
+
+    private List<LevelIcon> levelIcons = new List<LevelIcon>();
+
     void Start()
     {
-        
+        contentLoader.OnCompleteLoadingEvent += ContentLoader_OnCompleteLoadingEvent;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ContentLoader_OnCompleteLoadingEvent()
     {
-        
+        for (int i = 0; i < contentLoader.Levels.Count; i++)
+        {
+            levelIcons.Add(diContainer.InstantiatePrefabForComponent<LevelIcon>(levelIconPrefab, levelIconParent));
+            levelIcons[^1].Initialize(i + 1, contentLoader.Levels[i]);
+        }
     }
 }
