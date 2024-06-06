@@ -1,9 +1,11 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private Screen screen;
     [SerializeField] private LevelIcon levelIconPrefab;
     [SerializeField] private Transform levelIconParent;
 
@@ -12,6 +14,8 @@ public class MainMenu : MonoBehaviour
     [Inject] private GameLevel gameLevel;
 
     private List<LevelIcon> levelIcons = new List<LevelIcon>();
+
+    public Screen Screen => screen;
 
     void Start()
     {
@@ -31,11 +35,14 @@ public class MainMenu : MonoBehaviour
 
     private void LevelIcon_OnChooseLevelEvent(LevelData chooseLevelData)
     {
+        screen.DoScreenHide().Append(gameLevel.Screen.DoScreenShow());
         gameLevel.StartLevel(chooseLevelData, contentLoader.LoadedSpritesDictionary[chooseLevelData.id]);
     }
 
     private void GameLevel_OnUpdateDataEvent(int id)
     {
+        gameLevel.Screen.DoScreenHide().Append(screen.DoScreenShow());
         levelIcons.Find(x => x.Id.Equals(id)).UpdateProgressData();
+        contentLoader.SaveProgress(id);
     }
 }

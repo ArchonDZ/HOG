@@ -11,13 +11,13 @@ public class LoadingScreen : MonoBehaviour
 
     public void ScreenShow()
     {
-        screen.ScreenShow();
+        screen.DoScreenShow();
         ResetProgress();
     }
 
     public void ScreenHide()
     {
-        screen.ScreenHide();
+        screen.DoScreenHide();
     }
 
     public void SetFixedStepLoading(float _step)

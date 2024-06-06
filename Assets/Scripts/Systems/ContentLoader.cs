@@ -35,12 +35,15 @@ public class ContentLoader : IInitializable
     public event Action OnCompleteLoadingEvent;
     public event Action OnAbortLoadingEvent;
 
+    [Inject] private SaveSystem saveSystem;
     [Inject] private LoadingScreen loadingScreen;
 
     private const string pathToJson = "https://raw.githubusercontent.com/ArchonDZ/HOG/dev/Resources/hog_levels.json";
+    private const string fileSave = "saves.dat";
 
     private Content content;
     private Dictionary<int, Sprite> loadedSpritesDictionary = new Dictionary<int, Sprite>(20);
+    private SaveData saveData;
     private List<AsyncOperation> asyncOperations = new List<AsyncOperation>(20);
 
     public List<LevelData> Levels => content.levels;
@@ -76,12 +79,50 @@ public class ContentLoader : IInitializable
                     await Task.Yield();
                 }
 
+                LoadProgress();
                 asyncOperations.Clear();
                 loadingScreen.ScreenHide();
                 OnCompleteLoadingEvent?.Invoke();
             }
         }
     }
+
+    #region SaveSystem
+    public void SaveProgress(int id)
+    {
+        saveData ??= new SaveData();
+        LevelData levelData = content.levels.Find(x => x.id.Equals(id));
+        if (levelData != null)
+        {
+            Data data = saveData.datas.Find(x => x.id.Equals(id));
+            if (data != null)
+            {
+                data.counter = levelData.counter;
+            }
+            else
+            {
+                saveData.datas.Add(new Data(id, levelData.counter));
+            }
+            saveSystem.Save(fileSave, saveData);
+        }
+    }
+
+    private void LoadProgress()
+    {
+        saveData = saveSystem.Load(fileSave);
+        if (saveData != null)
+        {
+            for (int i = 0; i < saveData.datas.Count; i++)
+            {
+                LevelData levelData = content.levels.Find(x => x.id.Equals(saveData.datas[i].id));
+                if (levelData != null)
+                {
+                    levelData.counter = saveData.datas[i].counter;
+                }
+            }
+        }
+    }
+    #endregion
 
     private async void CreateRequestTexture(int index)
     {

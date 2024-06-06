@@ -15,6 +15,8 @@ public class GameLevel : MonoBehaviour
 
     private LevelData level;
 
+    public Screen Screen => screen;
+
     void Awake()
     {
         gameMainButton.onClick.AddListener(PlayerClick);
@@ -26,7 +28,6 @@ public class GameLevel : MonoBehaviour
         level = _level;
         gameMainButton.image.sprite = _sprite;
         UpdateCanvas();
-        screen.ScreenShow();
     }
 
     private void PlayerClick()
@@ -50,7 +51,6 @@ public class GameLevel : MonoBehaviour
 
     private void Quit()
     {
-        screen.ScreenHide();
         OnUpdateDataEvent?.Invoke(level.id);
     }
 }
