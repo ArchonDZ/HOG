@@ -1,12 +1,9 @@
-using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
 public class LoadingScreen : MonoBehaviour
 {
-    [SerializeField] private float durationTime = 0.5f;
-    [SerializeField] private Canvas canvas;
-    [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private Screen screen;
     [SerializeField] private ProgressBar progressBar;
     [SerializeField] private TextMeshProUGUI statusTextMeshPro;
 
@@ -14,13 +11,13 @@ public class LoadingScreen : MonoBehaviour
 
     public void ScreenShow()
     {
-        DoScreenShow();
+        screen.ScreenShow();
         ResetProgress();
     }
 
     public void ScreenHide()
     {
-        DoScreenHide();
+        screen.ScreenHide();
     }
 
     public void SetFixedStepLoading(float _step)
@@ -48,15 +45,5 @@ public class LoadingScreen : MonoBehaviour
         progressBar.SetFillAmount(0f);
         statusTextMeshPro.text = string.Empty;
         step = 1f;
-    }
-
-    private Sequence DoScreenShow()
-    {
-        return DOTween.Sequence().Append(canvasGroup.DOFade(1f, durationTime)).PrependCallback(() => canvas.enabled = true);
-    }
-
-    private Sequence DoScreenHide()
-    {
-        return DOTween.Sequence().Append(canvasGroup.DOFade(0f, durationTime)).AppendCallback(() => canvas.enabled = false);
     }
 }

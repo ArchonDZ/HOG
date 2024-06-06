@@ -8,11 +8,11 @@ using Zenject;
 [Serializable]
 public class Content
 {
-    public List<Level> levels = new List<Level>(20);
+    public List<LevelData> levels = new List<LevelData>(20);
 }
 
 [Serializable]
-public class Level
+public class LevelData
 {
     public int id;
     public string url;
@@ -20,7 +20,7 @@ public class Level
     public int counter;
     public int counterMax;
 
-    public Level(int _id, string _url, string _title, int _counter, int _counterMax)
+    public LevelData(int _id, string _url, string _title, int _counter, int _counterMax)
     {
         id = _id;
         url = _url;
@@ -43,7 +43,7 @@ public class ContentLoader : IInitializable
     private Dictionary<int, Sprite> loadedSpritesDictionary = new Dictionary<int, Sprite>(20);
     private List<AsyncOperation> asyncOperations = new List<AsyncOperation>(20);
 
-    public List<Level> Levels => content.levels;
+    public List<LevelData> Levels => content.levels;
     public Dictionary<int, Sprite> LoadedSpritesDictionary => loadedSpritesDictionary;
 
     public async void Initialize()
@@ -103,5 +103,4 @@ public class ContentLoader : IInitializable
             }
         }
     }
-
 }
