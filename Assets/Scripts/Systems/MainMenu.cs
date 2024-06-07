@@ -15,12 +15,18 @@ public class MainMenu : MonoBehaviour
 
     private List<LevelIcon> levelIcons = new List<LevelIcon>();
 
-    public Screen Screen => screen;
-
     void Start()
     {
         contentLoader.OnCompleteLoadingEvent += ContentLoader_OnCompleteLoadingEvent;
         gameLevel.OnUpdateDataEvent += GameLevel_OnUpdateDataEvent;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && screen.IsActiveScreen)
+        {
+            Application.Quit();
+        }
     }
 
     private void ContentLoader_OnCompleteLoadingEvent()

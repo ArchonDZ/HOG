@@ -9,6 +9,8 @@ public class Screen : MonoBehaviour
     private Canvas canvas;
     private CanvasGroup canvasGroup;
 
+    public bool IsActiveScreen => canvas.enabled;
+
     void Awake()
     {
         canvas = GetComponent<Canvas>();

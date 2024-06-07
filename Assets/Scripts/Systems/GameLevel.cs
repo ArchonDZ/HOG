@@ -23,6 +23,14 @@ public class GameLevel : MonoBehaviour
         quitButton.onClick.AddListener(Quit);
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && screen.IsActiveScreen)
+        {
+            Quit();
+        }
+    }
+
     public void StartLevel(LevelData _level, Sprite _sprite)
     {
         level = _level;
